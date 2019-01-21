@@ -9,18 +9,28 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private long id;
 	
 	private String nome;
 	private String email;
-	
+		
 	@ManyToMany
 	private Set<Role> roles;
 	
-	public int getId() {
+	public User() {
+		super();
+	}
+	
+	public User(String nome, String email) {
+		super();
+		this.nome = nome;
+		this.email = email;
+	}
+
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getNome() {

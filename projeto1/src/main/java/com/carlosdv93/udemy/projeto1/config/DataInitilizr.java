@@ -24,12 +24,21 @@ public class DataInitilizr implements ApplicationListener<ContextRefreshedEvent>
 		List<User> users = userRp.findAll();
 		
 		if(users.isEmpty() || users == null) {
-			User carlos = new User();
-			carlos.setEmail("carlos@carlos.com");
-			carlos.setNome("Carlos");
-			userRp.save(carlos);
+			createUser("Carlos", "carlos@carlos.com");
+			createUser("David", "david@david.com");
+			createUser("Maria", "maria@maria.com");
 		}
 		
+		User user = userRp.getOne(2l);
+		System.out.println(user.getNome());
+		user.setNome("David");
+		userRp.save(user);
+		System.out.println(user);
+	}
+	
+	public void createUser(String name, String email) {
+		User user = new User(name, email);
+		userRp.save(user);
 	}
 
 }
