@@ -29,11 +29,20 @@ public class DataInitilizr implements ApplicationListener<ContextRefreshedEvent>
 			createUser("Maria", "maria@maria.com");
 		}
 		
-		User user = userRp.getOne(2l);
+		/*User user = userRp.getOne(2l);
 		System.out.println(user.getNome());
 		user.setNome("David");
 		userRp.save(user);
-		System.out.println(user);
+		System.out.println(user);*/
+		
+		User user = userRp.findByNome("Maria");
+		System.out.println(user.getNome());
+		
+		User user2 = userRp.findComNome("rlo");
+		System.out.println(user2.getNome());
+		
+		User user3 = userRp.findByEmailContaining("rlo");
+		System.out.println(user3.getEmail());
 	}
 	
 	public void createUser(String name, String email) {
