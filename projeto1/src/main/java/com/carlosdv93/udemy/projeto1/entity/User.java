@@ -14,6 +14,7 @@ public class User {
 	private String nome;
 	private String email;
 	
+	@ManyToMany
 	private Set<Role> roles;
 	
 	public int getId() {
