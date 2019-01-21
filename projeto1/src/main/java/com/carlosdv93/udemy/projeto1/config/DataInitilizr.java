@@ -38,9 +38,6 @@ public class DataInitilizr implements ApplicationListener<ContextRefreshedEvent>
 		User user = userRp.findByNomeIgnoreCase("maria");
 		System.out.println(user.getNome());
 		
-		User user2 = userRp.findComNome("rlo");
-		System.out.println(user2.getNome());
-		
 		User user3 = userRp.findByEmailContaining("rlo");
 		System.out.println(user3.getEmail());
 	}

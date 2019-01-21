@@ -2,19 +2,18 @@ package com.carlosdv93.udemy.projeto1.entity;
 
 import java.util.Set;
 
-import javax.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
+import javax.persistence.Id;
 
-@Entity
+@Document
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private String id;
 	
 	private String nome;
 	private String email;
 		
-	@ManyToMany
 	private Set<Role> roles;
 	
 	public User() {
@@ -27,10 +26,10 @@ public class User {
 		this.email = email;
 	}
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getNome() {
