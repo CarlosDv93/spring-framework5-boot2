@@ -35,7 +35,7 @@ public class DataInitilizr implements ApplicationListener<ContextRefreshedEvent>
 		userRp.save(user);
 		System.out.println(user);*/
 		
-		User user = userRp.findByNome("Maria");
+		User user = userRp.findByNomeIgnoreCase("maria");
 		System.out.println(user.getNome());
 		
 		User user2 = userRp.findComNome("rlo");
