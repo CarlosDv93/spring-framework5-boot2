@@ -10,9 +10,9 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(DemoApplication.class, args);
 		
-		MyController controller = (MyController) ctx.getBean("myController");
+		VehicleComponent component = (VehicleComponent) ctx.getBean("vehicleComponent");
 		
-		controller.hello();
+		component.service();
 	}
 
 }
