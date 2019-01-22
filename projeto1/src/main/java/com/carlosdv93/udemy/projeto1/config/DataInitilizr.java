@@ -40,6 +40,9 @@ public class DataInitilizr implements ApplicationListener<ContextRefreshedEvent>
 		
 		User user3 = userRp.findByEmailContaining("rlo");
 		System.out.println(user3.getEmail());
+		
+		User user2 = userRp.findByEmailQualquerCoisa("carlos@carlos.com");
+		System.out.println(user2.getEmail() + " " + user2.getNome());
 	}
 	
 	public void createUser(String name, String email) {
