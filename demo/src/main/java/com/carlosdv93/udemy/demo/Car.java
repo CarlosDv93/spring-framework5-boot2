@@ -1,4 +1,4 @@
-package com.carlosdv93.udemy.workshopmongo;
+package com.carlosdv93.udemy.demo;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
