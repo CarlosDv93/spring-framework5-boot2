@@ -1,9 +1,13 @@
 package com.carlosdv93.udemy.aulas.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import com.carlosdv93.udemy.aulas.enums.StatusRole;
 
 @Entity
 public class Role {
@@ -13,6 +17,9 @@ public class Role {
 	private Long id;
 	
 	private String name;
+	
+	@Enumerated(EnumType.STRING)
+	private StatusRole status;
 	
 
 	public Long getId() {
@@ -29,6 +36,14 @@ public class Role {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public StatusRole getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusRole status) {
+		this.status = status;
 	}
 
 	
