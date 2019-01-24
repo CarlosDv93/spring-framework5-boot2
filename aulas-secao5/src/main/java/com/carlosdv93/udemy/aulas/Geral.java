@@ -11,10 +11,14 @@ public class Geral implements ApplicationListener<ContextRefreshedEvent>{
 	@Value("${geral.nome}")
 	private String nome;
 	
+	@Value("${my.server}")
+	private String serve;
+	
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
 		System.out.println("Qualquer Coisa");
 		System.out.println(nome);
+		System.out.println(serve);
 	}
 
 }
