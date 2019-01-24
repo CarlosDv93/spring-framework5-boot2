@@ -21,6 +21,14 @@ public class Role {
 	@Enumerated(EnumType.STRING)
 	private StatusRole status;
 	
+	public Role() {
+	}
+
+	public Role(String name, StatusRole status) {
+		super();
+		this.name = name;
+		this.status = status;
+	}
 
 	public Long getId() {
 		return id;
