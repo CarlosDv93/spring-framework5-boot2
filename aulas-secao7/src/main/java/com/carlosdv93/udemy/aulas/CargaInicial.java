@@ -43,15 +43,19 @@ public class CargaInicial implements ApplicationListener<ContextRefreshedEvent> 
 		
 		userRP.save(user);
 		
-		List<User> userR = this.userRP.findAll();
+		User user2 = new User("João", "joão@joao.com");
+		userRP.save(user2);
+		
+		User userR = this.userRP.findByNome("carlos");
+		
+		User userEmail = this.userRP.findByEmail("joão@joao.com");
+		
+		User UserNomeQuery = this.userRP.findByName("os");
+		
+		System.out.println(userR.getNome());
+		System.out.println(userEmail.getNome());
+		System.out.println(UserNomeQuery.getNome());
 
-		for (User user2 : userR) {
-			for(Role role2 :user2.getRoles()) {
-				for(Funcionality f : role2.getFunctionalities()) {
-					System.out.println(f.getNome());
-				}
-			}
-		}
 	}
 
 }
